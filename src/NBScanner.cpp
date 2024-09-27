@@ -69,6 +69,23 @@ String NBScanner::getSignalStrength()
   return "";
 }
 
+String NBScanner::getSignalQuality()
+{
+  String response;
+
+  MODEM.send("AT+CSQ");
+  if (MODEM.waitForResponse(100, &response) == 1) {
+    int firstSpaceIndex = response.indexOf(' ');
+    int lastCommaIndex = response.lastIndexOf(',');
+
+    if (firstSpaceIndex != -1 && lastCommaIndex != -1) {
+      return response.substring(lastCommaIndex + 1);
+    }
+  }
+
+  return "";
+}
+
 String NBScanner::readNetworks()
 {
   String response;

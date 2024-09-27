@@ -46,6 +46,11 @@ public:
    */
   String getSignalStrength();
 
+  /** Obtain signal quality
+      @return Signal Quality
+   */
+  String getSignalQuality();
+  
   /** Search available carriers
     @return A string with list of networks available
    */

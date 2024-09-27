@@ -33,6 +33,7 @@ getIMEI	KEYWORD2
 getICCID	KEYWORD2
 getCurrentCarrier	KEYWORD2
 getSignalStrength	KEYWORD2
+getSignalQuality	KEYWORD2
 readNetworks	KEYWORD2
 isPIN	KEYWORD2
 checkPIN	KEYWORD2

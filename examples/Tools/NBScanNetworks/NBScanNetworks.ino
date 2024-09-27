@@ -75,12 +75,17 @@ void loop() {
   Serial.print("Current carrier: ");
   Serial.println(scannerNetworks.getCurrentCarrier());
 
-  // returns strength and BER
+  // returns strength
   // signal strength in 0-31 scale. 31 means power > 51dBm
-  // BER is the Bit Error Rate. 0-7 scale. 99=not detectable
   Serial.print("Signal Strength: ");
   Serial.print(scannerNetworks.getSignalStrength());
   Serial.println(" [0-31]");
+
+  // returns BER
+  // BER is the Bit Error Rate. 0-7 scale. 99=not detectable
+  Serial.print("Signal Quality: ");
+  Serial.print(scannerNetworks.getSignalQuality());
+  Serial.println(" [0-7]");
 
   // scan for existing networks, displays a list of networks
   Serial.println("Scanning available networks. May take some seconds.");
